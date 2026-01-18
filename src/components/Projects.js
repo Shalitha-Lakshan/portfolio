@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FaGithub, FaExternalLinkAlt, FaCode, FaServer, FaMobile, FaJava, FaDatabase, FaDesktop, FaPuzzlePiece, FaReact, FaChartLine, FaImage, FaMapMarkedAlt, FaPalette, FaBolt } from 'react-icons/fa';
+import { FaGithub, FaExternalLinkAlt, FaCode, FaMobile, FaJava, FaDatabase, FaDesktop, FaPuzzlePiece, FaReact, FaChartLine, FaImage, FaMapMarkedAlt, FaPalette, FaBolt } from 'react-icons/fa';
 import { SiMongodb, SiExpress, SiReact, SiNodedotjs, SiMysql, SiJavascript, SiHtml5, SiCss3, SiSass, SiPhp, SiTailwindcss } from 'react-icons/si';
 import { TbApi } from 'react-icons/tb';
 

@@ -42,13 +42,17 @@ const Navbar = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5, type: 'spring', stiffness: 200 }}
         >
-          <a href="#" className="block p-2 bg-white/10 backdrop-blur-sm rounded-xl border-2 border-primary/20 shadow-lg shadow-primary/10">
+          <button 
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            className="p-2 bg-white/10 backdrop-blur-sm rounded-xl border-2 border-primary/20 shadow-lg shadow-primary/10 focus:outline-none focus:ring-2 focus:ring-primary/50"
+            aria-label="Scroll to top"
+          >
             <img 
               src="/images/logo.png" 
               alt="Shalitha Logo" 
               className="h-20 w-auto"
             />
-          </a>
+          </button>
         </motion.div>
 
         <div className="hidden md:flex items-center space-x-1 bg-dark/90 backdrop-blur-lg rounded-full px-3 py-1.5 border border-gray-600/70 shadow-xl">
