@@ -142,33 +142,6 @@ const Education = () => {
             </motion.div>
           ))}
         </div>
-
-        <motion.div 
-          className="mt-16 bg-dark-200/30 backdrop-blur-sm rounded-2xl p-8 border border-gray-800/50"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-        >
-          <h3 className="text-2xl font-semibold text-light mb-6 flex items-center">
-            <FaGraduationCap className="text-primary mr-3" /> Additional Training & Certifications
-          </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {[
-              'AWS Certified Cloud Practitioner (In Progress)',
-              'Full Stack Web Development Bootcamp',
-              'Agile Project Management with Scrum',
-              'Data Structures and Algorithms Specialization',
-              'Modern JavaScript (ES6+) Mastery',
-              'Responsive Web Design Certification'
-            ].map((cert, index) => (
-              <div key={index} className="flex items-start">
-                <span className="text-primary mr-3 mt-1">✓</span>
-                <span className="text-light/80">{cert}</span>
-              </div>
-            ))}
-          </div>
-        </motion.div>
       </div>
     </section>
   );
