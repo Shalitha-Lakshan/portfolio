@@ -54,7 +54,7 @@ const Contact = () => {
 
   // Initialize EmailJS with your public key
   useEffect(() => {
-    emailjs.init('eKYvw6H6TySgeXXlg'); // Your EmailJS user ID
+    emailjs.init('w3XO6PDsF_LqxtQN3'); // Your EmailJS public key
   }, []);
 
   const handleSubmit = async (e) => {
@@ -82,8 +82,8 @@ const Contact = () => {
       
       // Send email using EmailJS
       const response = await emailjs.send(
-        'service_74rmrvs',
-        'template_x8402mt',
+        'service_ev7fdmi',
+        'template_e2hbpkb',
         {
           from_name: formData.name,
           from_email: formData.email,
