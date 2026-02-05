@@ -54,7 +54,7 @@ const Contact = () => {
 
   // Initialize EmailJS with your public key
   useEffect(() => {
-    emailjs.init('w3XO6PDsF_LqxtQN3'); // Your EmailJS public key
+    emailjs.init('w3XO6PDsF_LqxtQN3');
   }, []);
 
   const handleSubmit = async (e) => {
@@ -72,31 +72,30 @@ const Contact = () => {
     setIsSubmitting(true);
     
     try {
-      console.log('Sending email with data:', {
+      const currentDate = new Date();
+      const templateParams = {
         from_name: formData.name,
         from_email: formData.email,
         subject: formData.subject || 'New message from portfolio contact form',
         message: formData.message,
-        to_email: 'shalithalakshan594@gmail.com'
-      });
+        to_email: 'shalithalakshan594@gmail.com',
+        time: currentDate.toLocaleString(),
+        year: currentDate.getFullYear()
+      };
+
+      console.log('Sending email with data:', templateParams);
       
       // Send email using EmailJS
       const response = await emailjs.send(
         'service_ev7fdmi',
         'template_e2hbpkb',
-        {
-          from_name: formData.name,
-          from_email: formData.email,
-          subject: formData.subject || 'New message from portfolio contact form',
-          message: formData.message,
-          to_email: 'shalithalakshan594@gmail.com'
-        },
-        'eKYvw6H6TySgeXXlg'
+        templateParams,
+        'w3XO6PDsF_LqxtQN3'
       );
       
-      console.log('EmailJS response:', response);
+      console.log('Email sent successfully:', response);
       
-      if (response.status === 200 || response.status === '200') {
+      if (response && (response.status === 200 || response.status === '200')) {
         // Success response
         setSubmitStatus({
           success: true,
@@ -116,15 +115,15 @@ const Contact = () => {
       }
       
     } catch (error) {
-      console.error('Email sending error details:', {
+      console.error('Email sending failed. Full error:', {
         error,
-        errorMessage: error.message,
-        errorStack: error.stack
+        message: error.message,
+        status: error.status,
+        response: error.response
       });
-      
       setSubmitStatus({
         success: false,
-        message: `Failed to send message. Error: ${error.message || 'Unknown error'}. Please try again or email me directly at shalithalakshan594@gmail.com`,
+        message: `Failed to send message: ${error.message || 'Unknown error'}. Please try again later.`,
         show: true
       });
       
