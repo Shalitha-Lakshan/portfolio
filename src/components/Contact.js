@@ -315,13 +315,24 @@ const Contact = () => {
           </motion.div>
 
           <motion.div
-            className="bg-dark-200/30 backdrop-blur-sm rounded-2xl p-8 shadow-xl border border-gray-800/50"
+            className="bg-dark-200/30 backdrop-blur-sm rounded-2xl p-8 shadow-2xl border border-gray-800/60"
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <h3 className="text-2xl font-semibold text-light mb-6">Send Me a Message</h3>
+            <div className="flex items-center justify-between gap-4 mb-6">
+              <div>
+                <h3 className="text-2xl font-semibold text-light">Send Me a Message</h3>
+                <p className="text-sm text-light/60 mt-2">
+                  Fields marked with * are required.
+                </p>
+              </div>
+              <div className="hidden sm:flex items-center px-3 py-1.5 rounded-full bg-dark-800/60 border border-dark-700 text-xs text-light/70">
+                Reply within 24-48 hours
+              </div>
+            </div>
+            <div className="h-px w-full bg-gradient-to-r from-transparent via-primary/40 to-transparent mb-8"></div>
             
             {renderFormFeedback()}
             
@@ -347,9 +358,9 @@ const Contact = () => {
                         setErrors(prev => ({ ...prev, name: null }));
                       }
                     }}
-                    className={`w-full px-4 py-3 bg-dark-800/50 border ${
-                      errors.name ? 'border-red-500/50' : 'border-dark-700'
-                    } rounded-lg focus:ring-2 focus:ring-primary/50 focus:border-primary/50 outline-none transition-all duration-200 text-light/90`}
+                    className={`w-full px-4 py-3 bg-dark-800/60 border ${
+                      errors.name ? 'border-red-500/50' : 'border-dark-700/80'
+                    } rounded-xl focus:ring-2 focus:ring-primary/50 focus:border-primary/50 outline-none transition-all duration-200 text-light/90 placeholder:text-light/40`}
                     placeholder="Your name"
                   />
                 </div>
@@ -373,9 +384,9 @@ const Contact = () => {
                         setErrors(prev => ({ ...prev, email: null }));
                       }
                     }}
-                    className={`w-full px-4 py-3 bg-dark-800/50 border ${
-                      errors.email ? 'border-red-500/50' : 'border-dark-700'
-                    } rounded-lg focus:ring-2 focus:ring-primary/50 focus:border-primary/50 outline-none transition-all duration-200 text-light/90`}
+                    className={`w-full px-4 py-3 bg-dark-800/60 border ${
+                      errors.email ? 'border-red-500/50' : 'border-dark-700/80'
+                    } rounded-xl focus:ring-2 focus:ring-primary/50 focus:border-primary/50 outline-none transition-all duration-200 text-light/90 placeholder:text-light/40`}
                     placeholder="your.email@example.com"
                   />
                 </div>
@@ -389,7 +400,7 @@ const Contact = () => {
                     name="subject"
                     value={formData.subject}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 bg-dark-800/50 border border-dark-700 rounded-lg focus:ring-2 focus:ring-primary/50 focus:border-primary/50 outline-none transition-all duration-200 text-light/90"
+                    className="w-full px-4 py-3 bg-dark-800/60 border border-dark-700/80 rounded-xl focus:ring-2 focus:ring-primary/50 focus:border-primary/50 outline-none transition-all duration-200 text-light/90 placeholder:text-light/40"
                     placeholder="What's this about?"
                   />
                 </div>
@@ -415,9 +426,9 @@ const Contact = () => {
                         setErrors(prev => ({ ...prev, message: null }));
                       }
                     }}
-                    className={`w-full px-4 py-3 bg-dark-800/50 border ${
-                      errors.message ? 'border-red-500/50' : 'border-dark-700'
-                    } rounded-lg focus:ring-2 focus:ring-primary/50 focus:border-primary/50 outline-none transition-all duration-200 text-light/90 resize-none`}
+                    className={`w-full px-4 py-3 bg-dark-800/60 border ${
+                      errors.message ? 'border-red-500/50' : 'border-dark-700/80'
+                    } rounded-xl focus:ring-2 focus:ring-primary/50 focus:border-primary/50 outline-none transition-all duration-200 text-light/90 resize-none placeholder:text-light/40`}
                     placeholder="How can I help you?"
                   ></textarea>
                   <p className="mt-1 text-xs text-light/50">
