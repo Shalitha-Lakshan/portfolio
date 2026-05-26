@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FaGithub, FaLinkedin, FaEnvelope, FaMapMarkerAlt, FaPhone } from 'react-icons/fa';
-import emailjs from '@emailjs/browser';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -52,11 +51,6 @@ const Contact = () => {
     }));
   };
 
-  // Initialize EmailJS with your public key
-  useEffect(() => {
-    emailjs.init('w3XO6PDsF_LqxtQN3');
-  }, []);
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     
@@ -72,30 +66,26 @@ const Contact = () => {
     setIsSubmitting(true);
     
     try {
-      const currentDate = new Date();
-      const templateParams = {
-        from_name: formData.name,
-        from_email: formData.email,
-        subject: formData.subject || 'New message from portfolio contact form',
-        message: formData.message,
-        to_email: 'shalithalakshan594@gmail.com',
-        time: currentDate.toLocaleString(),
-        year: currentDate.getFullYear()
-      };
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message
+        })
+      });
 
-      console.log('Sending email with data:', templateParams);
-      
-      // Send email using EmailJS
-      const response = await emailjs.send(
-        'service_ev7fdmi',
-        'template_e2hbpkb',
-        templateParams,
-        'w3XO6PDsF_LqxtQN3'
-      );
-      
-      console.log('Email sent successfully:', response);
-      
-      if (response && (response.status === 200 || response.status === '200')) {
+      const data = await response.json().catch(() => ({}));
+
+      if (!response.ok || !data.ok) {
+        throw new Error(data.message || 'Failed to send message.');
+      }
+
+      if (data && data.ok) {
         // Success response
         setSubmitStatus({
           success: true,
@@ -110,17 +100,10 @@ const Contact = () => {
           subject: '',
           message: ''
         });
-      } else {
-        throw new Error(`Unexpected response status: ${response.status}`);
       }
       
     } catch (error) {
-      console.error('Email sending failed. Full error:', {
-        error,
-        message: error.message,
-        status: error.status,
-        response: error.response
-      });
+      console.error('Email sending failed.', error);
       setSubmitStatus({
         success: false,
         message: `Failed to send message: ${error.message || 'Unknown error'}. Please try again later.`,
