@@ -1,12 +1,65 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaGithub, FaExternalLinkAlt, FaCode, FaMobile, FaJava, FaDatabase, FaDesktop, FaPuzzlePiece, FaReact, FaChartLine, FaImage, FaMapMarkedAlt, FaPalette, FaBolt } from 'react-icons/fa';
-import { SiMongodb, SiExpress, SiReact, SiNodedotjs, SiMysql, SiJavascript, SiHtml5, SiCss3, SiSass, SiPhp, SiTailwindcss } from 'react-icons/si';
+import { SiMongodb, SiExpress, SiReact, SiNodedotjs, SiMysql, SiJavascript, SiHtml5, SiCss3, SiSass, SiPhp, SiTailwindcss, SiDocker, SiKotlin } from 'react-icons/si';
 import { TbApi } from 'react-icons/tb';
 
 const projects = [
   {
     id: 1,
+    title: 'PowerSense',
+    description: 'An intelligent energy management platform providing real-time tracker of electricity consumption, device energy usage, carbon footprint analysis, threshold alerting, and monthly billing analytics.',
+    technologies: [
+      { name: 'MongoDB', icon: <SiMongodb className="text-green-500" /> },
+      { name: 'Express.js', icon: <SiExpress className="text-gray-300" /> },
+      { name: 'React', icon: <SiReact className="text-blue-400" /> },
+      { name: 'Node.js', icon: <SiNodedotjs className="text-green-600" /> },
+      { name: 'Tailwind CSS', icon: <SiTailwindcss className="text-cyan-300" /> },
+      { name: 'RESTful API', icon: <TbApi className="text-green-400" /> }
+    ],
+    category: 'Full Stack',
+    github: 'https://github.com/Shalitha-Lakshan/PowerSense',
+    demo: 'https://powersense-af.vercel.app',
+    image: '/images/projects/powersense-preview.png',
+    accentColor: 'from-amber-500 to-yellow-600'
+  },
+  {
+    id: 2,
+    title: 'HealthMate',
+    description: 'An AI-enabled telemedicine and smart healthcare platform built on a scalable microservices architecture. Enables patient onboarding, doctor scheduling, telemedicine video sessions, prescriptions, and multi-channel notifications.',
+    technologies: [
+      { name: 'React', icon: <SiReact className="text-blue-400" /> },
+      { name: 'Node.js', icon: <SiNodedotjs className="text-green-600" /> },
+      { name: 'Express.js', icon: <SiExpress className="text-gray-300" /> },
+      { name: 'MongoDB', icon: <SiMongodb className="text-green-500" /> },
+      { name: 'Docker', icon: <SiDocker className="text-blue-500" /> },
+      { name: 'Microservices', icon: <TbApi className="text-cyan-400" /> }
+    ],
+    category: 'Full Stack',
+    github: 'https://github.com/Shalitha-Lakshan/HealthMate',
+    demo: 'https://healthmate-ds.vercel.app',
+    image: '/images/projects/healthmate-preview.png',
+    accentColor: 'from-teal-500 to-cyan-600'
+  },
+  {
+    id: 3,
+    title: 'JSP Distributors POS',
+    description: 'A Point of Sale, billing, inventory, and transaction tracking system. Supports FIFO batch tracking, customer/supplier credit management ledger, and automated reporting and analytics.',
+    technologies: [
+      { name: 'MongoDB', icon: <SiMongodb className="text-green-500" /> },
+      { name: 'Express.js', icon: <SiExpress className="text-gray-300" /> },
+      { name: 'React', icon: <SiReact className="text-blue-400" /> },
+      { name: 'Node.js', icon: <SiNodedotjs className="text-green-600" /> },
+      { name: 'RESTful API', icon: <TbApi className="text-cyan-400" /> }
+    ],
+    category: 'Full Stack',
+    github: 'https://github.com/Shalitha-Lakshan/JSP_Distributors',
+    demo: 'https://jsp-distributors.vercel.app',
+    image: '/images/projects/jsp-distributors-preview.png',
+    accentColor: 'from-blue-600 to-indigo-700'
+  },
+  {
+    id: 4,
     title: 'The Beauty Loft',
     description: 'A responsive business website designed to showcase salon services, products, and contact information with a clean and modern UI. Features service listings, gallery, and contact form functionality.',
     technologies: [
@@ -23,7 +76,7 @@ const projects = [
     accentColor: 'from-pink-500 to-rose-600'
   },
   {
-    id: 2,
+    id: 5,
     title: 'ECOCYCLE',
     description: 'A comprehensive plastic bottle recycling management system that tracks collections, manages users, and promotes environmental sustainability through a modern web platform. The system streamlines the recycling process and encourages eco-friendly practices.',
     technologies: [
@@ -40,11 +93,11 @@ const projects = [
     accentColor: 'from-emerald-500 to-teal-600'
   },
   {
-    id: 3,
+    id: 6,
     title: 'TRIPTREK',
     description: 'A mobile travel planning and experience management app that helps users discover destinations, manage itineraries, and organize trips efficiently. Features include user authentication, trip planning tools, and destination recommendations.',
     technologies: [
-      { name: 'Kotlin', icon: <FaMobile className="text-purple-500" /> },
+      { name: 'Kotlin', icon: <SiKotlin className="text-purple-500" /> },
       { name: 'Android SDK', icon: <FaMobile className="text-green-500" /> },
       { name: 'Firebase', icon: <FaDatabase className="text-yellow-500" /> },
       { name: 'Google Maps API', icon: <FaMapMarkedAlt className="text-blue-500" /> },
@@ -57,11 +110,11 @@ const projects = [
     accentColor: 'from-blue-500 to-indigo-600'
   },
   {
-    id: 4,
+    id: 7,
     title: 'MoodMate',
     description: 'A Kotlin-based mental wellness and mood tracking mobile app that helps users log emotions, reflect, and monitor emotional trends over time. Features include mood tracking, journaling, and data visualization for better mental health management.',
     technologies: [
-      { name: 'Kotlin', icon: <FaMobile className="text-purple-500" /> },
+      { name: 'Kotlin', icon: <SiKotlin className="text-purple-500" /> },
       { name: 'Android SDK', icon: <FaMobile className="text-green-500" /> },
       { name: 'Room Database', icon: <FaDatabase className="text-blue-500" /> },
       { name: 'MPAndroidChart', icon: <FaChartLine className="text-blue-400" /> },
@@ -75,7 +128,7 @@ const projects = [
     accentColor: 'from-purple-500 to-pink-600'
   },
   {
-    id: 5,
+    id: 8,
     title: 'Car Rental System',
     description: 'A comprehensive car rental management system developed in Java with JavaFX, featuring vehicle inventory management, customer booking system, and rental transaction processing with an intuitive user interface.',
     technologies: [
@@ -92,7 +145,7 @@ const projects = [
     accentColor: 'from-orange-500 to-red-600'
   },
   {
-    id: 6,
+    id: 9,
     title: 'Portfolio Website',
     description: 'A modern, responsive portfolio website built with React and Tailwind CSS, featuring smooth animations, dark/light mode, and a clean, professional design to showcase my work and skills effectively.',
     technologies: [
