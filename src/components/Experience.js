@@ -1,46 +1,48 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FaBriefcase, FaCalendarAlt, FaMapMarkerAlt, FaExternalLinkAlt, FaCodeBranch, FaCode } from 'react-icons/fa';
-import { SiMicrosoftoffice, SiQuickbooks, SiMicrosoftazure, SiReact, SiNodedotjs, SiMongodb, SiJavascript, SiTypescript, SiExpress, SiTailwindcss } from 'react-icons/si';
+import { SiMicrosoftoffice, SiQuickbooks, SiMicrosoftazure, SiReact, SiNodedotjs, SiMongodb, SiJavascript, SiTypescript, SiExpress, SiTailwindcss, SiGit, SiGithub, SiVisualstudiocode, SiPostman, SiFigma } from 'react-icons/si';
 
 const experiences = [
   {
     id: 1,
-    role: 'Information Systems & Accounts Executive',
-    company: 'Jayalath Sudu Putha (Pvt) Ltd',
-    period: 'June 2023 - Present',
+    role: 'IT & Systems Assistant (Freelance)',
+    company: 'JAYALATH SUDU PUTHA (PVT) LTD',
+    period: '2023 - 2025',
     location: 'Colombo, Sri Lanka',
     companyUrl: '#',
     achievements: [
-      'Spearheaded digital transformation by implementing automated accounting systems, reducing manual data entry by 60%',
-      'Developed and maintained custom financial dashboards using Power BI, improving financial reporting efficiency by 45%',
-      'Led cross-functional teams to integrate new financial software, resulting in a 30% improvement in process efficiency',
-      'Established robust internal controls that reduced financial discrepancies by 25%'
+      'Successfully computerized key company operations and records management systems, reducing search times',
+      'Supported the active development and maintenance of internal business billing systems',
+      'Automated invoicing and database query tasks using custom Excel VBA and SQL tools',
+      'Enhanced operational process efficiency by replacing manual procedures with software solutions',
+      'Maintained consistent system uptime by providing daily technical support for IT operations'
     ],
     responsibilities: [
-      'Manage end-to-end accounting operations including AP/AR, GL, and financial reporting',
-      'Develop and maintain automated financial systems and dashboards',
-      'Ensure compliance with accounting standards and regulatory requirements',
-      'Collaborate with IT to implement system upgrades and integrations',
-      'Analyze financial data to identify trends and provide strategic recommendations'
+      'Assist in computerizing company operations and record management systems',
+      'Support the development and maintenance of internal business systems',
+      'Handle database systems, billing routines, and invoice automation workflows',
+      'Optimize manual warehouse and office workflows through custom software utilities',
+      'Provide general IT support and troubleshooting for staff members'
     ],
     technologies: [
-      { name: 'QuickBooks', icon: <SiQuickbooks className="text-green-600" /> },
-      { name: 'Microsoft Office', icon: <SiMicrosoftoffice className="text-blue-500" /> },
-      { name: 'Power BI', icon: <SiMicrosoftazure className="text-yellow-400" /> },
-      { name: 'Excel VBA', icon: <FaCodeBranch className="text-green-700" /> }
+      { name: 'Git & GitHub', icon: <SiGithub className="text-gray-300" /> },
+      { name: 'Visual Studio Code', icon: <SiVisualstudiocode className="text-blue-500" /> },
+      { name: 'Postman (API Testing)', icon: <SiPostman className="text-orange-500" /> },
+      { name: 'Figma (UI/UX Design)', icon: <SiFigma className="text-pink-500" /> },
+      { name: 'MERN', icon: <SiReact className="text-cyan-400" /> }
     ],
     skills: [
-      'Financial Analysis', 'Process Automation', 'System Integration', 
-      'Financial Reporting', 'Internal Controls', 'Data Visualization',
-      'Team Leadership', 'Project Management'
+      'IT Support', 'Process Automation', 'System Integration', 
+      'Database Handling', 'Billing Automation', 'Data Visualization',
+      'Problem Solving', 'Project Management'
     ]
   },
   {
     id: 2,
     role: 'Freelance Full Stack Developer',
     company: 'Self-Employed',
-    period: '2021 - Present',
+    period: '2021 - 2024',
     location: 'Remote',
     companyUrl: 'https://github.com/Shalitha-Lakshan',
     achievements: [

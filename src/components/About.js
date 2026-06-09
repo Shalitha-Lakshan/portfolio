@@ -361,29 +361,37 @@ const About = () => {
                       <div className="absolute left-0 top-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
                         <FaBriefcase className="text-xl text-primary" />
                       </div>
-                      <h4 className="text-xl font-semibold text-white mb-1">Information Systems & Accounts Executive</h4>
-                      <p className="text-primary font-medium">Jayalath Sudu Putha (Pvt) Ltd</p>
-                      <p className="text-sm text-light/60 mb-4">June 2023 - Present | Colombo, Sri Lanka</p>
+                      <h4 className="text-xl font-semibold text-white mb-1">IT & Systems Assistant (Freelance)</h4>
+                      <p className="text-primary font-medium">JAYALATH SUDU PUTHA (PVT) LTD</p>
+                      <p className="text-sm text-light/60 mb-4">2023 - 2025 | Colombo, Sri Lanka</p>
                       
                       <div className="space-y-3">
                         <div className="flex">
                           <span className="text-primary mr-2">▹</span>
-                          <p className="text-light/80">Spearheaded digital transformation by implementing automated accounting systems, reducing manual data entry by 60%</p>
+                          <p className="text-light/80">Assisted in computerizing company operations and record management systems</p>
                         </div>
                         <div className="flex">
                           <span className="text-primary mr-2">▹</span>
-                          <p className="text-light/80">Developed and maintained custom financial dashboards using Power BI, improving financial reporting efficiency by 45%</p>
+                          <p className="text-light/80">Supported development and maintenance of internal business systems</p>
                         </div>
                         <div className="flex">
                           <span className="text-primary mr-2">▹</span>
-                          <p className="text-light/80">Established robust internal controls that reduced financial discrepancies by 25%</p>
+                          <p className="text-light/80">Worked on database handling, billing and invoice automation</p>
+                        </div>
+                        <div className="flex">
+                          <span className="text-primary mr-2">▹</span>
+                          <p className="text-light/80">Improved efficiency of manual processes through software solutions</p>
+                        </div>
+                        <div className="flex">
+                          <span className="text-primary mr-2">▹</span>
+                          <p className="text-light/80">Provided technical support for daily IT operations</p>
                         </div>
                       </div>
                       
                       <div className="mt-6">
                         <h5 className="text-sm font-medium text-light/70 mb-3">Technologies Used:</h5>
                         <div className="flex flex-wrap gap-2">
-                          {['QuickBooks', 'Microsoft Office', 'Power BI', 'Excel VBA', 'SQL', 'ERP Systems'].map((tech, i) => (
+                          {['Git & GitHub', 'Visual Studio Code', 'Postman (API Testing)', 'Figma (UI/UX Design)', 'MERN'].map((tech, i) => (
                             <span key={i} className="px-3 py-1 bg-primary/10 text-primary text-xs rounded-full">
                               {tech}
                             </span>
@@ -398,7 +406,7 @@ const About = () => {
                       </div>
                       <h4 className="text-xl font-semibold text-white mb-1">Freelance Web Developer</h4>
                       <p className="text-primary font-medium">Self-Employed</p>
-                      <p className="text-sm text-light/60 mb-4">2020 - Present | Remote</p>
+                      <p className="text-sm text-light/60 mb-4">2021 - 2024 | Remote</p>
                       
                       <div className="space-y-3">
                         <div className="flex">
@@ -446,7 +454,7 @@ const About = () => {
                       <div className="space-y-3">
                         <div className="flex">
                           <span className="text-primary mr-2">▹</span>
-                          <p className="text-light/80">Current GPA: 3.6/4.0 (First Class Honors)</p>
+                          <p className="text-light/80">Current GPA: 2.84</p>
                         </div>
                         <div className="flex">
                           <span className="text-primary mr-2">▹</span>
